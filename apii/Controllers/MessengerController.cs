@@ -24,7 +24,7 @@ namespace apii.Controllers
         public void Create([FromBody] messenger message)
         {
             DataContext.Messages.Add(message);
-            this.hub.Clients.All.SendAsync("MessageCreated", message);
+            this.hub.Clients.All.SendAsync("messengerCreated", message);
         }
 
         [HttpGet]
