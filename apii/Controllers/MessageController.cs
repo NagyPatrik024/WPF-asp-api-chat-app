@@ -10,25 +10,25 @@ using System.Threading.Tasks;
 namespace apii.Controllers
 {
     [ApiController]
-    [Route("messenger")]
-    public class MessengerController : ControllerBase
+    [Route("Message")]
+    public class MessageController : ControllerBase
     {
         IHubContext<SignalRHub> hub;
 
-        public MessengerController(IHubContext<SignalRHub> hub)
+        public MessageController(IHubContext<SignalRHub> hub)
         {
             this.hub = hub;
         }
 
         [HttpPost]
-        public void Create([FromBody] messenger message)
+        public void Create([FromBody] Message message)
         {
             DataContext.Messages.Add(message);
-            this.hub.Clients.All.SendAsync("messengerCreated", message);
+            this.hub.Clients.All.SendAsync("MessageCreated", message);
         }
 
         [HttpGet]
-        public IEnumerable<messenger> GetAll()
+        public IEnumerable<Message> GetAll()
         {
             return DataContext.Messages;
         }

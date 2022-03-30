@@ -30,7 +30,7 @@ namespace client
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            (this.DataContext as MainWindowViewModel).CurrentMessage = new Models.messenger();
+            (this.DataContext as MainWindowViewModel).CurrentMessage = new Models.Message();
         }
 
         //private void nev_TextChanged(object sender, TextChangedEventArgs e)
