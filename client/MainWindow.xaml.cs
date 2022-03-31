@@ -33,9 +33,5 @@ namespace client
             (this.DataContext as MainWindowViewModel).CurrentMessage = new Models.Message();
         }
 
-        //private void nev_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    vm.CurrentMessage.SenderName = nev.Text;
-        //}
     }
 }
